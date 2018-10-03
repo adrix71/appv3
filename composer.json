@@ -1,0 +1,33 @@
+{
+    "name": "popphp/pop-bootstrap",
+    "description": "A skeleton application for the Pop Web Application Framework, using Bootstrap and Font Awesome frameworks.",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Nick Sagona",
+            "email": "dev@nolainteractive.com",
+            "homepage": "http://www.nolainteractive.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "popphp/popphp-framework": ">=3.5.0",
+        "ext-json": "*",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0.x-dev"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "App\\Event\\Composer::install"
+        ]
+    }
+}
