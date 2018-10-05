@@ -15,6 +15,7 @@ that allows access view a basic web interface, an API and also the console.
 
 * [Requirements](#requirements)
 * [Installation](#installation)
+    + [Set development environment](#set-development-environment)
 * [Getting Started](#getting-started)
 * [Web Access](#web-access)
 * [API Access](#api-access)
@@ -44,6 +45,17 @@ $ composer create-project popphp/pop-bootstrap project-folder
 $ cd project-folder
 $ npm install
 $ npm run build
+```
+
+[Top](#pop-bootstrap)
+
+### Set development environment
+
+Add the following line in your virtualhost or .htaccess to enable
+the development mode.
+
+```console
+$ SetEnv APPLICATION_ENV "development"
 ```
 
 [Top](#pop-bootstrap)
