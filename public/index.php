@@ -39,7 +39,7 @@ if ( ! class_exists( Application::class ) ) {
  * Create main app object, register the app module and run the app.
  */
 try {
-    $app = new Application( $autoloader, include __DIR__ . '/../app/config/app.web.php' );
+    $app = new Application( $autoloader, include __DIR__ . '/../app/config/application.web.php' );
     $app->register( new Module() );
     $app->run();
 } catch ( \Exception $exception ) {
