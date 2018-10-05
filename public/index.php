@@ -42,7 +42,7 @@ try {
     $app = new Application( $autoloader, include __DIR__ . '/../app/config/app.web.php' );
     $app->register( new Module() );
     $app->run();
-} catch ( \Exception $ex ) {
+} catch ( \Exception $exception ) {
     $app = new Module();
-    $app->webError( $ex );
+    $app->webError( $exception );
 }
