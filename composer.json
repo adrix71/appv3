@@ -10,8 +10,10 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0",
-        "popphp/popphp-framework": ">=3.5.0"
+        "php": ">=7.1.6",
+        "popphp/popphp-framework": ">=3.5.0",
+        "ext-pdo": "*",
+        "ext-json": "*"
     },
     "suggest": {
         "ext-json": "Allow managing json",

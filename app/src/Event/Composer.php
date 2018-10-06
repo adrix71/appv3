@@ -209,9 +209,6 @@ class Composer
      *
      * @return array
      */
-    /**
-     * @return array
-     */
     public static function getDbAdapters()
     {
         $dbAdapters = [];
