@@ -91,10 +91,16 @@ return [
             ]
         ]
     ],
-    'application_title' => 'My Application',
+    'application_title' => 'Phire CMS 3.0',
     'pagination'        => 25,
     'multiple_sessions' => true,
     'login_attempts'    => 0,
     'session_timeout'   => 0,  // In minutes
-    'timeout_warning'   => 0   // In seconds
+    'timeout_warning'   => 0,   // In seconds
+    'protected_page'    => [
+        'admin',
+        'roles',
+        'sessions',
+        'users'
+    ]
 ];
