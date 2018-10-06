@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6b092ad4dffa8a418d3031457686cde",
+    "content-hash": "4957db404bf3bf224dd8909bcddb7cb0",
     "packages": [
         {
             "name": "popphp/pop-acl",
@@ -1746,9 +1746,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6.0",
-        "ext-json": "*",
-        "ext-pdo": "*"
+        "php": ">=7.0.0"
     },
     "platform-dev": []
 }

@@ -45,7 +45,7 @@ class Composer
 
         chmod(__DIR__ . '/../../../data', 0777);
 
-        if (!file_exists(__DIR__ . '/../../../app/config/app.web.php')) {
+        if (!file_exists(__DIR__ . '/../../../app/config/application.web.php')) {
             $console->write();
             $console->write($console->colorize(
                 'A configuration file was not detected.', Console::BOLD_YELLOW
@@ -168,10 +168,10 @@ class Composer
                         "'password' => '" . $dbPass . "',",
                         "'host'     => '" . $dbHost . "',",
                         "'type'     => '" . $dbType . "'"
-                    ], file_get_contents(__DIR__ . '/../../../app/config/app.web.orig.php')
+                    ], file_get_contents(__DIR__ . '/../../../app/config/application.web.orig.php')
                 );
 
-                file_put_contents(__DIR__ . '/../../../app/config/app.web.php', $webConfig);
+                file_put_contents(__DIR__ . '/../../../app/config/application.web.php', $webConfig);
 
                 // Write CLI config file
                 $cliConfig = str_replace(
@@ -190,10 +190,10 @@ class Composer
                         "'password' => '" . $dbPass . "',",
                         "'host'     => '" . $dbHost . "',",
                         "'type'     => '" . $dbType . "'"
-                    ], file_get_contents(__DIR__ . '/../../../app/config/app.cli.orig.php')
+                    ], file_get_contents(__DIR__ . '/../../../app/config/application.cli.orig.php')
                 );
 
-                file_put_contents(__DIR__ . '/../../../app/config/app.cli.php', $cliConfig);
+                file_put_contents(__DIR__ . '/../../../app/config/application.cli.php', $cliConfig);
 
                 $console->write($console->colorize('Application configuration completed.', Console::BOLD_GREEN));
             }
