@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `user_sessions` (
 --
 -- Dump dei dati per la tabella `user_sessions`
 --
-\
+
 --
 -- Limiti per le tabelle scaricate
 --
