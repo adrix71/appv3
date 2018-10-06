@@ -46,7 +46,10 @@ class Module extends \Pop\Module\Module
      *
      * @param  Application $application
      * @throws Exception
-     * @return Module
+     * @return $this|\Pop\Module\Module
+     * @throws Exception
+     * @throws \Pop\Http\Exception
+     * @throws \Pop\Service\Exception
      */
     public function register(Application $application)
     {
@@ -65,6 +68,8 @@ class Module extends \Pop\Module\Module
      * Register the web app components
      *
      * @throws Exception
+     * @throws \Pop\Http\Exception
+     * @throws \Pop\Service\Exception
      */
     public function registerWeb()
     {
@@ -125,6 +130,7 @@ class Module extends \Pop\Module\Module
      * Register the CLI app components
      *
      * @throws Exception
+     * @throws \Pop\Service\Exception
      */
     public function registerCli()
     {
@@ -287,6 +293,7 @@ class Module extends \Pop\Module\Module
      *
      * @param  \Exception $exception
      * @return void
+     * @throws \Pop\Http\Exception
      */
     public function webError(\Exception $exception)
     {
@@ -294,8 +301,8 @@ class Module extends \Pop\Module\Module
         $view->title   = 'Application Error';
         $view->message = htmlentities(strip_tags($exception->getMessage()), ENT_QUOTES, 'UTF-8');
 
-        if (file_exists(__DIR__ . '/../config/app.web.php')) {
-            $config = include __DIR__ . '/../config/app.web.php';
+        if (file_exists(__DIR__ . '/../config/application.web.php')) {
+            $config = include __DIR__ . '/../config/application.web.php';
             $view->application_title = $config['application_title'];
         } else {
             $view->application_title = '';
@@ -327,5 +334,4 @@ class Module extends \Pop\Module\Module
         echo $string;
         exit(127);
     }
-
 }
