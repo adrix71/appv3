@@ -159,7 +159,7 @@ class Composer
                         "'username' => '',",
                         "'password' => '',",
                         "'host'     => '',",
-                        "'type'     => null"
+                        "'type'     => ''"
                     ],
                     [
                         "'adapter'  => '" . strtolower($dbInterface) . "',",
@@ -181,7 +181,7 @@ class Composer
                         "'username' => '',",
                         "'password' => '',",
                         "'host'     => '',",
-                        "'type'     => null"
+                        "'type'     => ''"
                     ],
                     [
                         "'adapter'  => '" . strtolower($dbInterface) . "',",
