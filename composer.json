@@ -24,6 +24,11 @@
             "App\\": "app/src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "AppTest\\": "app/test/"
+        }
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "3.0.x-dev"
