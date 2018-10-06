@@ -24,6 +24,8 @@ CREATE TABLE IF NOT EXISTS "roles" (
   "name" varchar NOT NULL,
   "verification" integer,
   "approval" integer,
+  "email_as_username" integer,
+  "email_required" integer,
   "permissions" text,
   UNIQUE ("id"),
   CONSTRAINT "fk_role_parent_id" FOREIGN KEY ("parent_id") REFERENCES "roles" ("id") ON DELETE SET NULL ON UPDATE CASCADE
@@ -36,8 +38,9 @@ CREATE INDEX "role_name" ON "roles" ("name");
 -- Dumping data for table "roles"
 --
 
-INSERT INTO "roles" ("id", "parent_id", "name", "verification", "approval", "permissions") VALUES
-(2001, NULL, 'Admin', 1, 1, NULL);
+INSERT INTO "roles" ("id", "parent_id", "name", "verification", "approval", "email_as_username", "email_required", "permissions") VALUES
+(2001, NULL, 'Admin', 0, 0, 1, 0, 'a:2:{s:5:"allow";a:0:{}s:4:"deny";a:0:{}}'),
+(2009, NULL, 'Guest', 0, 0, 0, 0, 'a:2:{s:5:"allow";a:0:{}s:4:"deny";a:0:{}}');
 
 -- --------------------------------------------------------
 
