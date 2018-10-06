@@ -39,8 +39,8 @@ CREATE INDEX "role_name" ON "roles" ("name");
 --
 
 INSERT INTO "roles" ("id", "parent_id", "name", "verification", "approval", "email_as_username", "email_required", "permissions") VALUES
-(2001, NULL, 'Admin', 0, 0, 1, 0, 'a:2:{s:5:"allow";a:0:{}s:4:"deny";a:0:{}}'),
-(2009, NULL, 'Guest', 0, 0, 0, 0, 'a:2:{s:5:"allow";a:0:{}s:4:"deny";a:0:{}}');
+(2001, NULL, 'Admin', 0, 1, 1, 0, 'a:2:{s:5:"allow";a:0:{}s:4:"deny";a:0:{}}'),
+(2009, NULL, 'Guest', 1, 1, 0, 1, 'a:2:{s:5:"allow";a:0:{}s:4:"deny";a:0:{}}');
 
 -- --------------------------------------------------------
 

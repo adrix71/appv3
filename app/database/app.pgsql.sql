@@ -16,6 +16,8 @@ CREATE TABLE IF NOT EXISTS "roles" (
   "parent_id" integer,
   "name" varchar(255) NOT NULL,
   "verification" integer,
+  "email_as_username" integer,
+  "email_required" integer,
   "approval" integer,
   "permissions" text,
   PRIMARY KEY ("id"),
@@ -29,8 +31,9 @@ CREATE INDEX "role_name" ON "roles" ("name");
 -- Dumping data for table "roles"
 --
 
-INSERT INTO "roles" ("parent_id", "name", "verification", "approval", "permissions") VALUES
-(NULL, 'Admin', 1, 1, NULL);
+INSERT INTO "roles" ("id", "parent_id", "name", "verification", "approval", "email_as_username", "email_required", "permissions") VALUES
+(2001, NULL, 'Admin', 0, 1, 1, 0, 'a:2:{s:5:"allow";a:0:{}s:4:"deny";a:0:{}}'),
+(2009, NULL, 'Guest', 1, 1, 0, 1, 'a:2:{s:5:"allow";a:0:{}s:4:"deny";a:0:{}}');
 
 -- --------------------------------------------------------
 
