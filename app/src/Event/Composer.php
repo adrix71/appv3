@@ -168,7 +168,7 @@ class Composer
                         "'password' => '" . $dbPass . "',",
                         "'host'     => '" . $dbHost . "',",
                         "'type'     => '" . $dbType . "'"
-                    ], file_get_contents(__DIR__ . '/../../../app/config/application.web.orig.php')
+                    ], file_get_contents(__DIR__ . '/../../../app/config/application.web.php.dist')
                 );
 
                 file_put_contents(__DIR__ . '/../../../app/config/application.web.php', $webConfig);
@@ -190,7 +190,7 @@ class Composer
                         "'password' => '" . $dbPass . "',",
                         "'host'     => '" . $dbHost . "',",
                         "'type'     => '" . $dbType . "'"
-                    ], file_get_contents(__DIR__ . '/../../../app/config/application.cli.orig.php')
+                    ], file_get_contents(__DIR__ . '/../../../app/config/application.cli.php.dist')
                 );
 
                 file_put_contents(__DIR__ . '/../../../app/config/application.cli.php', $cliConfig);
