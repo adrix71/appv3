@@ -12,9 +12,16 @@
  * Pop Web Bootstrap Application Framework Configuration File
  */
 return [
+    // Retrieve a list of routers.
     'routes'    => include 'routes/web.php',
+
+    // Retrieve a list of resources for ACL.
     'resources' => include 'resources.php',
+
+    // Retrive the form fields.
     'forms'     => include 'forms.php',
+
+    // Database connection.
     'database'  => [
         'adapter'  => '',
         'database' => '',
@@ -23,6 +30,8 @@ return [
         'host'     => '',
         'type'     => ''
     ],
+
+    // Create a service.
     'services'  => [
         'session' => 'Pop\Session\Session::getInstance',
         'acl'     => 'Pop\Acl\Acl',
@@ -31,10 +40,15 @@ return [
                 return new \Pop\Mail\Mailer(new \Pop\Mail\Transport\Sendmail());
             }
         ],
+
+        // Top navigation
+        // TODO: Renove this.
         'nav.top' => [
             'call'   => 'Pop\Nav\Nav',
             'params' => [
-                'tree' => include 'nav/top.php',
+                'tree' => [
+                    // Navigation tree. Missing for now.
+                ],
                 'config' => [
                     'top'     => [
                         'id'    => 'pop-nav',
@@ -51,10 +65,15 @@ return [
                 ]
             ]
         ],
+
+        // Fluid navigation
+        // TODO: Remove this.
         'nav.fluid' => [
             'call'   => 'Pop\Nav\Nav',
             'params' => [
-                'tree' => include 'nav/fluid.php',
+                'tree' => [
+                    // Navigation tree. Missing for now.
+                ],
                 'config' => [
                     'top'     => [
                         'id'    => 'pop-fluid-nav',
@@ -71,10 +90,61 @@ return [
                 ]
             ]
         ],
+
+        // Static navigation.
+        // TODO: Rename in content.
         'nav.static' => [
             'call'   => 'Pop\Nav\Nav',
             'params' => [
-                'tree' => include 'nav/static.php',
+                'tree' => [
+                    // Roles menu
+                    'roles' => [
+                        'name' => 'Roles',
+                        'href' => '/roles',
+                        'acl'  => [
+                            'resource'   => 'roles',
+                            'permission' => 'index',
+                        ],
+                        'attributes' => [
+                            'class' => 'roles-nav-icon',
+                        ],
+                    ],
+
+                    // Session menu
+                    'sessions' => [
+                        'name' => 'Sessions',
+                        'href' => '/sessions',
+                        'acl'  => [
+                            'resource'   => 'sessions',
+                            'permission' => 'index',
+                        ],
+                        'attributes' => [
+                            'class' => 'sessions-nav-icon',
+                        ],
+                        'children' => [
+                            'logins' => [
+                                'name' => 'Logins',
+                                'href' => 'logins',
+                                'acl'  => [
+                                    'resource'   => 'sessions',
+                                    'permission' => 'logins',
+                                ],
+                            ],
+                        ],
+                    ],
+
+                    'users' => [
+                        'name' => 'Users',
+                        'href' => '/users',
+                        'acl'  => [
+                            'resource'   => 'users',
+                            'permission' => 'index',
+                        ],
+                        'attributes' => [
+                            'class' => 'users-nav-icon',
+                        ],
+                    ],
+                ],
                 'config' => [
                     'top'     => [
                         'id'    => 'pop-static-nav',
@@ -91,12 +161,18 @@ return [
             ]
         ]
     ],
+
+    // Configuration params.
+    // TODO: Move this in databae config table.
     'application_title' => 'Phire CMS 3.0',
     'pagination'        => 25,
     'multiple_sessions' => true,
     'login_attempts'    => 0,
     'session_timeout'   => 0,  // In minutes
     'timeout_warning'   => 0,   // In seconds
+
+    // Page protected for control panel.
+    // TODO: Change this. Unknow method for now.
     'protected_page'    => [
         'admin',
         'roles',
